@@ -2,6 +2,18 @@
 // Saudi Arabic (ar-SA). Product references and brand names remain unchanged.
 (() => {
  const ar = {
+  'Full name, phone number and email are required.':'الاسم الكامل ورقم الجوال والبريد الإلكتروني مطلوبة.',
+  'Please enter a valid email address to receive your confirmation.':'يرجى إدخال بريد إلكتروني صحيح لاستلام رسالة التأكيد.',
+  'Please tell us about your enquiry in up to 4,000 characters.':'يرجى كتابة استفسارك بما لا يتجاوز 4000 حرف.',
+  'Please choose a service.':'يرجى اختيار الخدمة المطلوبة.',
+  'Send enquiry':'إرسال الاستفسار',
+  'Sending your enquiry…':'جارٍ إرسال استفسارك…',
+  'Your enquiry will be sent directly to info@karama.tech. We’ll email you a confirmation and get in touch shortly.':'سيُرسل استفسارك مباشرة إلى info@karama.tech. سنرسل لك رسالة تأكيد ونتواصل معك قريباً.',
+  'Your email app will open with your enquiry addressed to info@karama.tech. Review and send the email to complete your enquiry.':'سيُفتح تطبيق بريدك الإلكتروني برسالة إلى info@karama.tech. راجع الرسالة وأرسلها لإكمال استفسارك.',
+  'The request is taking longer than expected. Please retry with the same details.':'يستغرق الطلب وقتاً أطول من المتوقع. يرجى المحاولة مجدداً بنفس البيانات.',
+  'Connection failed. Please try again.':'تعذر الاتصال. يرجى المحاولة مجدداً.',
+  'Online enquiry sending is not available yet. Please contact info@karama.tech or call +966 55 141 5599.':'خدمة إرسال الاستفسارات غير متاحة حالياً. تواصل عبر info@karama.tech أو اتصل على ‎+966 55 141 5599.',
+  'We couldn’t save your request. Please try again or contact info@karama.tech.':'تعذر حفظ طلبك. يرجى المحاولة مجدداً أو التواصل عبر info@karama.tech.',
   'Prepare quotation email':'تجهيز رسالة طلب عرض السعر',
   'Quotation request':'طلب عرض سعر',
   'Quantity':'الكمية',
@@ -33,7 +45,7 @@
   'FROM IDEA TO NEXT STEP':'من الفكرة إلى الخطوة التالية', 'What’s your next big thing?':'ما فكرتك القادمة؟', 'An idea. A challenge. A better way of doing things. Let’s start there.':'فكرة جديدة، تحدٍّ قائم، أو طريقة أفضل للعمل. لنبدأ من هنا.', 'Start a conversation':'تواصل معنا',
   'Built for what’s next.':'نواكب طموحك القادم.', 'Back to top ↑':'العودة للأعلى ↑', 'Email':'البريد الإلكتروني', 'Saudi Arabia office':'مكتب المملكة العربية السعودية', 'Al Imam Saud Ibn Abdul Aziz Branch Rd,':'طريق الإمام سعود بن عبدالعزيز الفرعي،', 'Al Muruj, Riyadh 12333':'حي المروج، الرياض 12333', 'Canada office':'مكتب كندا', '1505 Barrington St,':'1505 شارع بارينغتون،', 'Halifax, NS B3J 3Y6':'هاليفاكس، نوفا سكوشا B3J 3Y6', 'KaRama IT.':'كرامة لتقنية المعلومات.', 'Big ideas. Better tech. Real impact.':'أفكار طموحة. تقنية أفضل. أثر ملموس.',
   'Contact details':'بيانات التواصل', 'Social media':'حسابات التواصل الاجتماعي', 'Privacy':'الخصوصية', 'PRIVACY':'الخصوصية', 'Your information.':'بياناتك.', 'Handled with care.':'نتعامل معها بعناية.', 'Close privacy information':'إغلاق معلومات الخصوصية',
-  'This website does not use analytics, tracking cookies or external fonts. Your quotation cart is saved on this device; contact details are not saved in your browser. When you send a quotation request, your name, phone number, optional email, notes and selected products are stored securely for KaRama and processed by Supabase and our email service to handle your enquiry. Contact info@karama.tech about your information. The separate contact form opens your own email app.':'لا يستخدم هذا الموقع أدوات التحليل أو ملفات تعريف الارتباط للتتبّع أو خطوطاً خارجية. تُحفظ سلة طلب عرض السعر على هذا الجهاز، ولا تُحفظ بيانات التواصل في متصفحك. عند إرسال الطلب، يُحفظ اسمك ورقم جوالك وبريدك الإلكتروني إن أضفته وملاحظاتك والمنتجات المختارة لدى كرامة، وتُعالج عبر Supabase وخدمة البريد الإلكتروني للرد على استفسارك. للاستفسار عن بياناتك، تواصل معنا عبر info@karama.tech. أما نموذج التواصل المنفصل فيفتح تطبيق البريد الإلكتروني الخاص بك.',
+  'This website does not use analytics, tracking cookies or external fonts. Your quotation cart is saved on this device; contact details are not saved in your browser. When you send a quotation request, your name, phone number, email, notes and selected products are stored securely for KaRama and processed by Supabase and our email service to handle your enquiry. Contact info@karama.tech about your information. The contact form also stores your enquiry for KaRama and sends a confirmation to your email address.':'لا يستخدم هذا الموقع أدوات التحليل أو ملفات تعريف الارتباط للتتبّع أو خطوطاً خارجية. تُحفظ سلة طلب عرض السعر على هذا الجهاز، ولا تُحفظ بيانات التواصل في متصفحك. عند إرسال الطلب، يُحفظ اسمك ورقم جوالك وبريدك الإلكتروني وملاحظاتك والمنتجات المختارة لدى كرامة، وتُعالج عبر Supabase وخدمة البريد الإلكتروني للرد على استفسارك. للاستفسار عن بياناتك، تواصل معنا عبر info@karama.tech. ويحفظ نموذج التواصل استفسارك لدى كرامة ويرسل رسالة تأكيد إلى بريدك الإلكتروني.',
   'KaRama IT — technology with purpose. Explore our expertise, practical possibilities and approach to your next digital chapter.':'كرامة لتقنية المعلومات — حلول تقنية تخدم أعمالك. تعرّف على خبراتنا وحلولنا ومنهجيتنا لخطوتك الرقمية القادمة.', 'KaRama IT — Built for what’s next.':'كرامة لتقنية المعلومات — نواكب طموحك القادم.', 'An abstract network connecting digital services':'تصميم يوضّح ترابط الخدمات الرقمية',
   '/ Expertise':'/ خبراتنا', 'The expertise.':'الخبرة المناسبة.', 'For your next move.':'لخطوتك القادمة.', 'Explore practical ways to bring your business and technology together. Start with the challenge, then find the right skills to move it forward.':'اكتشف حلولاً عملية تربط أعمالك بالتقنية. نبدأ بفهم التحدّي، ثم نحدد الخبرات المناسبة لمعالجته.',
   '01 / OUR EXPERTISE':'01 / خبراتنا', 'The right technology.':'التقنية المناسبة.', 'Every business has a different challenge.':'لكل منشأة تحدّياتها.', 'Let’s find a smarter way through yours.':'لنجد معاً الحل الأنسب لأعمالك.',
@@ -85,6 +97,9 @@
   if (Object.hasOwn(ar,value)) return ar[value];
   let match;
   if ((match=value.match(/^Showing all (\d+) products$/))) return `عرض جميع المنتجات (${number(match[1])})`;
+  if ((match=value.match(/^Thank you\. Your enquiry has been received and a confirmation email has been sent to your email address\. Our team will get in touch shortly\. Reference: (.+)\.$/))) return `شكراً لك. استلمنا استفسارك وأرسلنا رسالة تأكيد إلى بريدك الإلكتروني. سيتواصل معك فريقنا قريباً. رقم الطلب: ${match[1]}.`;
+  if ((match=value.match(/^Thank you\. We’ve received your quotation request and sent a confirmation with your product selection to your email address\. Our team will get in touch shortly\. Reference: (.+)\.$/))) return `شكراً لك. استلمنا طلب عرض السعر وأرسلنا رسالة تأكيد تتضمن المنتجات المختارة إلى بريدك الإلكتروني. سيتواصل معك فريقنا قريباً. رقم الطلب: ${match[1]}.`;
+  if ((match=value.match(/^Your request is saved, but we couldn’t confirm all notification emails\. Please retry with the same details, or contact info@karama.tech with reference (.+)\.$/))) return `تم حفظ طلبك، لكن تعذر تأكيد إرسال جميع رسائل البريد. حاول مجدداً بنفس البيانات أو تواصل عبر info@karama.tech مع ذكر رقم الطلب: ${match[1]}.`;
   if ((match=value.match(/^Showing (\d+) of (\d+) products$/))) return `عرض ${number(match[1])} من أصل ${number(match[2])} منتج`;
   if ((match=value.match(/^Add more \((\d+)\)$/))) return `أضف المزيد (${number(match[1])})`;
   if ((match=value.match(/^(\d+) products? · (\d+) items?$/))) return `المنتجات: ${number(match[1])} · إجمالي الكمية: ${number(match[2])}`;

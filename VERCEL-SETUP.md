@@ -1,52 +1,46 @@
-# Enable automatic quotation requests
+# Vercel, Supabase and branded enquiry emails
 
-The Automations page is built for Vercel with a private Supabase database and Resend email delivery to **info@karama.tech**. No credentials have been added and no live email has been sent.
+The website has two server endpoints: `/api/contact` and `/api/quotation`. Both validate the form, save the enquiry to Supabase, email the full request to **info@karama.tech**, and send a branded confirmation to the visitor. Email is required for both forms. Full name and phone are also required for quotations.
 
-## 1. Supabase
+Quotation emails include the selected products, quantities, installation choice, contact details and notes. Both staff and customer copies include a CSV product summary attachment. The KaRama logo is embedded as an inline image attachment. Customer confirmations use English or Saudi Arabic according to the visitor’s language selection.
 
-Create/select your Supabase project. Run `supabase/schema.sql` in its SQL Editor. This creates the private quotation table and a server-only function with database-backed rate limiting. Leave the Data API enabled for the public schema; the explicit grants and Row Level Security prevent browser access. Copy the project URL and server **secret key** from the project settings. A legacy service-role key is also supported through `SUPABASE_SERVICE_ROLE_KEY`.
+## Database
 
-Only the Vercel API uses the secret key. The frontend does not need a Supabase key or visitor accounts. Never paste a server secret into HTML, browser JavaScript, or chat.
+Supabase project: **KaRama IT Website**, organization **KaRama LTD**, project reference `frsivsbogurkoohnfkdt`, region Frankfurt (`eu-central-1`). API URL: `https://frsivsbogurkoohnfkdt.supabase.co`.
 
-## 2. Email sending
+The schema in `supabase/website-enquiries.sql` creates:
 
-In [Resend](https://resend.com/docs/dashboard/domains/introduction), verify a sending domain you control, such as `karama.tech`, by adding the required DNS records. Create a sending API key. Use an address on that verified domain, such as `quotations@karama.tech`, for the sender. Your existing inbox at `info@karama.tech` remains the fixed recipient. Customer email is optional and becomes Reply-To when provided.
+- `website_enquiries`: the contact or quotation details, language and independent staff/customer email statuses.
+- `website_enquiry_items`: product references, names, categories and quantities for quotation requests.
+- `website_enquiry_rate_limits`: hashed network identifiers and request limits shared across server instances.
 
-## 3. Vercel
+These tables have Row Level Security enabled and no access grants for anonymous or signed-in website visitors. Only the server secret key can call the submission function or access enquiry records. The browser needs no Supabase key or customer account. The initial schema and line-item storage were tested using a transaction that was rolled back.
 
-Import this website folder as the Vercel project root. Choose the **Other** framework preset. `vercel.json` sets the build command to `npm run build`, public output to `dist`, and creates the `/api/quotation` Node function. Use Node.js 22 or a newer supported version. There are no npm dependencies.
+## Vercel configuration
 
-Add the following in Vercel → Project → Settings → Environment Variables for the environments you deploy:
+Import `karamaitltd/KaRama-Information-Technology-Website`, with the repository root and the Other preset. `vercel.json` builds `dist/` and deploys the two API routes with the bundled logo. Use Node 22 or a newer supported version. There are no npm dependencies.
+
+Store these values privately in Vercel for the deployed environments:
 
 | Variable | Value |
 | --- | --- |
-| `SUPABASE_URL` | Your Supabase project URL |
-| `SUPABASE_SECRET_KEY` | Your server secret key, kept private |
-| `RESEND_API_KEY` | Your Resend sending API key |
-| `QUOTATION_FROM_EMAIL` | `KaRama IT <quotations@karama.tech>` after verifying the sender domain |
+| `SUPABASE_URL` | `https://frsivsbogurkoohnfkdt.supabase.co` |
+| `SUPABASE_SECRET_KEY` | The project’s server Secret key; never a browser publishable key |
+| `RESEND_API_KEY` | The website’s sending-only key, restricted to karama.tech |
+| `QUOTATION_FROM_EMAIL` | `KaRama IT <info@karama.tech>` |
 
-Deploy or redeploy after setting them. Do not copy `.env.example` placeholder values as real credentials.
+The existing verified karama.tech domain can be shared with the other application. This website uses its own sending key. No transfer, DNS change, or rotation of the existing application’s key is required.
 
-## 4. Verify the hosted flow
+## Delivery and retries
 
-Add a camera and lock to the cart, change quantities, and request a quotation. Full name and a valid phone are required; email is optional. Submit one real request and verify the corresponding row in Supabase and email in `info@karama.tech`. Verify phone-only requests too. Do not consider launch verification complete until the inbox has received the request.
+Requests are saved before either email is sent. Staff and customer messages have separate deterministic idempotency keys and acceptance statuses. If only one email fails, a retry with the same form details sends only the missing message. The form keeps the visitor’s details and the cart on failure. Accepted messages are not resent. Supabase records track provider acceptance, which does not prove inbox delivery; verify Delivered or inspect bounces in Resend.
 
-The required Service requirement dropdown offers Products with installation or Products only. Its selection is stored in the existing JSON payload and included in the enquiry email; no extra database column or schema migration is needed.
+An uncertain request older than 23 hours requires a manual check to avoid resending after the provider’s idempotency window. A browser refresh creates a new in-memory request reference on resubmission; it can therefore produce a second request. Pending messages are visible in Supabase for staff follow-up. There is no background retry scheduler yet.
 
-The handler saves the request first, then asks Resend to send it. Success means Resend accepted the message; it does not prove inbox delivery. Monitor bounces and delivery in the Resend dashboard. Supabase `email_status = 'pending'` means sending has not been confirmed; `accepted` means the provider accepted it. Check pending requests in Supabase if email service is disrupted.
+## Verification
 
-Retries reuse the same reference and Resend idempotency key. Requests with an uncertain status older than 23 hours require a manual check instead of risking duplicate emails. If a visitor refreshes the page, the cart remains; retry references and contact details are kept only in page memory. A new submission after a refresh can create a new request. Rate limiting allows 20 new/pending submission attempts per network per hour. A network change during a retry may require starting a fresh request.
+Run `node --test tests/quotation.test.cjs` and `node scripts/build.cjs`. For local preview use `node scripts/dev.cjs`, or `node --env-file=.env scripts/dev.cjs` with a private environment file. Tests mock external services and send no real email.
 
-## Local development and checks
+After deployment, submit a clearly marked contact test and quotation test using an approved inbox. Confirm the saved records and product line items, the staff emails, and customer receipts with logo and product attachment. Confirm delivery in Resend before declaring the live email flow verified.
 
-Run `npm run dev` and open `http://127.0.0.1:4173/automations.html`. The catalog also opens directly from `automations.html`; sending requires the server. Without configured environment variables, submission returns an explicit unavailable message and retains the cart. For a configured local server, load environment variables privately, for example `node --env-file=.env scripts/dev.cjs`; the normal dev command does not load `.env` automatically.
-
-Run `npm test` for API validation and failure-path tests, and `npm run build` for the public site output. Automated API tests mock Supabase and Resend and never send emails.
-
-If npm is unavailable on your computer, use the dependency-free equivalents: `node scripts/dev.cjs`, `node --test tests/quotation.test.cjs`, and `node scripts/build.cjs`. These direct Node commands were used for local verification because the existing npm installation on this computer points to a missing npm CLI file.
-
-Product titles are descriptive labels derived from the 51 supplied images. Exact model numbers, specifications, bundles and availability must be confirmed by KaRama. Product references connect each card, image and quotation line to the same record. Maintain `products.json` and the matching cards in `automations.html` together when changing the catalog.
-
-The cart stores product IDs and quantities in local storage. Contact details, notes and requested items are stored in the private Supabase table when sent. Review retention requirements before launch; remove expired customer records as appropriate. Old rows in `quotation_rate_limits` can be periodically removed after their one-hour window.
-
-API implementation follows the official [Vercel Node function documentation](https://vercel.com/docs/functions/runtimes/node-js), [Supabase server-key guidance](https://supabase.com/docs/guides/getting-started/api-keys), and [Resend sending API](https://resend.com/docs/api-reference/emails/send-email).
+GitHub Pages uses a separate static build and prepares emails in the visitor’s email app; it cannot execute these endpoints. See `GITHUB-PAGES.md`.

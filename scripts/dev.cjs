@@ -3,15 +3,16 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname,'..');
 const quotation = require('../api/quotation');
+const contact = require('../api/contact');
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.json':'application/json'};
 const server = http.createServer(async (req,res)=>{
  const url = new URL(req.url,'http://localhost');
- if (url.pathname === '/api/quotation') {
+ if (url.pathname === '/api/quotation' || url.pathname === '/api/contact') {
   let body = ''; for await (const chunk of req) {body += chunk; if (Buffer.byteLength(body)>24576) {res.writeHead(413);res.end();return;}}
   req.body=body;
   res.status=code=>{res.statusCode=code;return res;};
   res.json=data=>{res.setHeader('Content-Type','application/json');res.end(JSON.stringify(data));};
-  try {await quotation(req,res);} catch {res.status(500).json({error:'Unable to process the request.'});}
+  try {await (url.pathname === '/api/contact' ? contact : quotation)(req,res);} catch {res.status(500).json({error:'Unable to process the request.'});}
   return;
  }
  let relative;

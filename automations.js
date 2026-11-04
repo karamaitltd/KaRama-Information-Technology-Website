@@ -121,7 +121,7 @@
   phone.setCustomValidity(/^[+\d\s().-]+$/.test(normalizedPhone) && digits.length >= 7 && digits.length <= 15 ? '' : translate('Please enter a valid phone number with 7 to 15 digits.'));
   const email = form.elements.email;
   email.setCustomValidity('');
-  if (email.validity.typeMismatch) email.setCustomValidity(translate('Please enter a valid email address, or leave email empty.'));
+  if (!email.value.trim() || email.validity.typeMismatch) email.setCustomValidity(translate('Please enter a valid email address to receive your confirmation.'));
   form.elements.serviceRequirement.setCustomValidity(form.elements.serviceRequirement.value ? '' : translate('Please select whether you require installation services.'));
  }
  form.addEventListener('input', () => {validateContact(); clearResult();});
@@ -136,7 +136,7 @@
   validateContact(); if (!form.reportValidity()) return;
   if (!cart.size) {showResult('Please add a product to your cart first.',true); return;}
   if (location.protocol === 'file:') {showResult('Automatic sending is available on the hosted website. For now, contact info@karama.tech with your product references.',true); return;}
-  const payload = {fullName:name.value.trim(),phone:normalizeDigits(phone.value.trim()),email:form.elements.email.value.trim(),serviceRequirement:form.elements.serviceRequirement.value,notes:form.elements.notes.value.trim(),website:form.elements.website.value,items:[...cart].map(([id,quantity])=>({id,quantity}))};
+  const payload = {fullName:name.value.trim(),phone:normalizeDigits(phone.value.trim()),email:form.elements.email.value.trim(),serviceRequirement:form.elements.serviceRequirement.value,notes:form.elements.notes.value.trim(),website:form.elements.website.value,locale:language?.locale||'en',items:[...cart].map(([id,quantity])=>({id,quantity}))};
   if (document.documentElement.dataset.quotationMode === 'email') {
    const requirement = payload.serviceRequirement === 'products-with-installation' ? 'Products with installation' : 'Products only';
    const body = [translate('Quotation request'),'',`${translate('Full name')}: ${payload.fullName}`,`${translate('Phone number')}: ${payload.phone}`,`${translate('Email')}: ${payload.email || '—'}`,`${translate('Service requirement')}: ${translate(requirement)}`,'',translate('Selected products'),...payload.items.map(item=>`${item.id} | ${translate(products.get(item.id).name)} | ${translate('Quantity')}: ${item.quantity}`),'',translate('Additional requirements'),payload.notes || '—'].join('\n');
@@ -155,7 +155,7 @@
    const data = await response.json().catch(()=>({}));
    if (!response.ok || !data.ok) throw new Error(data.error || 'We couldn’t send your request. Please try again or contact info@karama.tech.');
    cart.clear(); updateCart(); form.reset(); validateContact(); lastFingerprint = ''; requestId = '';
-   showResult(`Thank you. Your quotation request has been submitted to KaRama. Reference: ${data.reference}. We’ll contact you using the details you provided.`);
+   showResult(`Thank you. We’ve received your quotation request and sent a confirmation with your product selection to your email address. Our team will get in touch shortly. Reference: ${data.reference}.`);
   } catch (error) {
    showResult(error.name === 'TimeoutError' || error.name === 'AbortError' ? 'The request is taking longer than expected. Your cart is still here. Please try again; the same request reference will be reused.' : error.message || 'Connection failed. Your cart is still here. Please try again.',true);
   } finally {

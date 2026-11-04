@@ -40,7 +40,6 @@ const form = document.querySelector('#project-form');
 if(form){
  const service = new URLSearchParams(location.search).get('service'); const index = Object.keys(services).indexOf(service);
  if(index >= 0) document.querySelector('#project-service').selectedIndex = index;
- form.addEventListener('submit',event=>{event.preventDefault(); const data=new FormData(event.currentTarget); const subject=`Project enquiry from ${data.get('name')}`; const body=`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company')||'Not provided'}\nService: ${data.get('service')}\n\nProject idea\n------------\n${data.get('message')}\n`; location.href=`mailto:info@karama.tech?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; document.querySelector('.form-result').textContent='Your email app should now open with your enquiry. If it doesn’t, email us at info@karama.tech.';});
 }
 document.querySelector('#year').textContent = new Date().getFullYear();
 

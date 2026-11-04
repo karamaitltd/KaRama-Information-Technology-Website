@@ -3,9 +3,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
-    "api/quotation.js": {
+    "api/*.js": {
       "maxDuration": 30,
-      "includeFiles": "products.json"
+      "includeFiles": "assets/karama-logo-horizontal.png"
     }
   },
   "headers": [
