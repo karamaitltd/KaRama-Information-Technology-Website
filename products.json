@@ -1,0 +1,359 @@
+[
+  {
+    "id": "KRM-001",
+    "name": "TP-Link wireless access point",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-001.jpg"
+  },
+  {
+    "id": "KRM-002",
+    "name": "Hikvision dome camera",
+    "category": "Cameras",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-002.jpg"
+  },
+  {
+    "id": "KRM-003",
+    "name": "Ceiling speaker & amplifier set",
+    "category": "Audio systems",
+    "brand": "",
+    "image": "assets/products/krm-003.jpg"
+  },
+  {
+    "id": "KRM-004",
+    "name": "TP-Link wall-plug Wi-Fi extender",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-004.jpg"
+  },
+  {
+    "id": "KRM-005",
+    "name": "Hikvision video door station & monitor",
+    "category": "Video intercoms",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-005.jpg"
+  },
+  {
+    "id": "KRM-006",
+    "name": "Yealink colour-screen IP phone",
+    "category": "Phones & PBX",
+    "brand": "Yealink",
+    "image": "assets/products/krm-006.jpg"
+  },
+  {
+    "id": "KRM-007",
+    "name": "Ruijie Reyee wireless access point",
+    "category": "Networking",
+    "brand": "Ruijie",
+    "image": "assets/products/krm-007.jpg"
+  },
+  {
+    "id": "KRM-008",
+    "name": "EZVIZ indoor pan & tilt camera",
+    "category": "Cameras",
+    "brand": "EZVIZ",
+    "image": "assets/products/krm-008.jpg"
+  },
+  {
+    "id": "KRM-009",
+    "name": "Hikvision network switch",
+    "category": "Networking",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-009.jpg"
+  },
+  {
+    "id": "KRM-010",
+    "name": "Grandstream desk IP phone",
+    "category": "Phones & PBX",
+    "brand": "Grandstream",
+    "image": "assets/products/krm-010.jpg"
+  },
+  {
+    "id": "KRM-011",
+    "name": "Grandstream compact IP phone",
+    "category": "Phones & PBX",
+    "brand": "Grandstream",
+    "image": "assets/products/krm-011.jpg"
+  },
+  {
+    "id": "KRM-012",
+    "name": "ZKTeco face & fingerprint terminal",
+    "category": "Attendance & access",
+    "brand": "ZKTeco",
+    "image": "assets/products/krm-012.jpg"
+  },
+  {
+    "id": "KRM-013",
+    "name": "Aruba Instant On access point",
+    "category": "Networking",
+    "brand": "Aruba",
+    "image": "assets/products/krm-013.jpg"
+  },
+  {
+    "id": "KRM-014",
+    "name": "Hikvision PTZ dome camera",
+    "category": "Cameras",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-014.jpg"
+  },
+  {
+    "id": "KRM-015",
+    "name": "TP-Link multi-antenna Wi-Fi extender",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-015.jpg"
+  },
+  {
+    "id": "KRM-016",
+    "name": "Hikvision turret camera",
+    "category": "Cameras",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-016.jpg"
+  },
+  {
+    "id": "KRM-017",
+    "name": "Hikvision outdoor bullet camera",
+    "category": "Cameras",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-017.jpg"
+  },
+  {
+    "id": "KRM-018",
+    "name": "EZVIZ indoor dome camera",
+    "category": "Cameras",
+    "brand": "EZVIZ",
+    "image": "assets/products/krm-018.jpg"
+  },
+  {
+    "id": "KRM-019",
+    "name": "Raykube app-connected smart lock",
+    "category": "Smart locks",
+    "brand": "Raykube",
+    "image": "assets/products/krm-019.jpg"
+  },
+  {
+    "id": "KRM-020",
+    "name": "Hikvision video intercom set",
+    "category": "Video intercoms",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-020.jpg"
+  },
+  {
+    "id": "KRM-021",
+    "name": "Fingerprint keypad smart lock",
+    "category": "Smart locks",
+    "brand": "",
+    "image": "assets/products/krm-021.jpg"
+  },
+  {
+    "id": "KRM-022",
+    "name": "ZKTeco fingerprint access terminal",
+    "category": "Attendance & access",
+    "brand": "ZKTeco",
+    "image": "assets/products/krm-022.jpg"
+  },
+  {
+    "id": "KRM-023",
+    "name": "ZKTeco attendance terminal",
+    "category": "Attendance & access",
+    "brand": "ZKTeco",
+    "image": "assets/products/krm-023.jpg"
+  },
+  {
+    "id": "KRM-024",
+    "name": "EZVIZ outdoor pan & tilt camera",
+    "category": "Cameras",
+    "brand": "EZVIZ",
+    "image": "assets/products/krm-024.jpg"
+  },
+  {
+    "id": "KRM-025",
+    "name": "TP-Link N300 Wi-Fi range extender",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-025.jpg"
+  },
+  {
+    "id": "KRM-026",
+    "name": "Panasonic video intercom set",
+    "category": "Video intercoms",
+    "brand": "Panasonic",
+    "image": "assets/products/krm-026.jpg"
+  },
+  {
+    "id": "KRM-027",
+    "name": "Hikvision surveillance recorder",
+    "category": "CCTV kits & recorders",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-027.jpg"
+  },
+  {
+    "id": "KRM-028",
+    "name": "TP-Link 5-port desktop switch",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-028.jpg"
+  },
+  {
+    "id": "KRM-029",
+    "name": "Hikvision dual-light bullet camera",
+    "category": "Cameras",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-029.jpg"
+  },
+  {
+    "id": "KRM-030",
+    "name": "TP-Link 8-port desktop switch",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-030.jpg"
+  },
+  {
+    "id": "KRM-031",
+    "name": "Panasonic video door phone",
+    "category": "Video intercoms",
+    "brand": "Panasonic",
+    "image": "assets/products/krm-031.jpg"
+  },
+  {
+    "id": "KRM-032",
+    "name": "TP-Link Omada ceiling access point",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-032.jpg"
+  },
+  {
+    "id": "KRM-033",
+    "name": "Panasonic corded desk phone",
+    "category": "Phones & PBX",
+    "brand": "Panasonic",
+    "image": "assets/products/krm-033.jpg"
+  },
+  {
+    "id": "KRM-034",
+    "name": "Grandstream IP PBX system",
+    "category": "Phones & PBX",
+    "brand": "Grandstream",
+    "image": "assets/products/krm-034.jpg"
+  },
+  {
+    "id": "KRM-035",
+    "name": "TP-Link plug-in range extender",
+    "category": "Networking",
+    "brand": "TP-Link",
+    "image": "assets/products/krm-035.jpg"
+  },
+  {
+    "id": "KRM-036",
+    "name": "Wall-mounted network cabinet",
+    "category": "Network cabinets",
+    "brand": "",
+    "image": "assets/products/krm-036.jpg"
+  },
+  {
+    "id": "KRM-037",
+    "name": "Outdoor wireless bullet camera",
+    "category": "Cameras",
+    "brand": "",
+    "image": "assets/products/krm-037.jpg"
+  },
+  {
+    "id": "KRM-038",
+    "name": "Compact network rack cabinet",
+    "category": "Network cabinets",
+    "brand": "",
+    "image": "assets/products/krm-038.jpg"
+  },
+  {
+    "id": "KRM-039",
+    "name": "EZVIZ outdoor dome camera",
+    "category": "Cameras",
+    "brand": "EZVIZ",
+    "image": "assets/products/krm-039.jpg"
+  },
+  {
+    "id": "KRM-040",
+    "name": "Commax handset video intercom",
+    "category": "Video intercoms",
+    "brand": "Commax",
+    "image": "assets/products/krm-040.jpg"
+  },
+  {
+    "id": "KRM-041",
+    "name": "Commax video intercom set",
+    "category": "Video intercoms",
+    "brand": "Commax",
+    "image": "assets/products/krm-041.jpg"
+  },
+  {
+    "id": "KRM-042",
+    "name": "Mixed CCTV camera & recorder kit",
+    "category": "CCTV kits & recorders",
+    "brand": "",
+    "image": "assets/products/krm-042.jpg"
+  },
+  {
+    "id": "KRM-043",
+    "name": "Dahua video intercom kit",
+    "category": "Video intercoms",
+    "brand": "Dahua",
+    "image": "assets/products/krm-043.jpg"
+  },
+  {
+    "id": "KRM-044",
+    "name": "Hikvision outdoor surveillance camera",
+    "category": "Cameras",
+    "brand": "Hikvision",
+    "image": "assets/products/krm-044.jpg"
+  },
+  {
+    "id": "KRM-045",
+    "name": "EZVIZ video door entry kit",
+    "category": "Video intercoms",
+    "brand": "EZVIZ",
+    "image": "assets/products/krm-045.jpg"
+  },
+  {
+    "id": "KRM-046",
+    "name": "Philips digital smart lock",
+    "category": "Smart locks",
+    "brand": "Philips",
+    "image": "assets/products/krm-046.jpg"
+  },
+  {
+    "id": "KRM-047",
+    "name": "Dahua door station & touch monitor",
+    "category": "Video intercoms",
+    "brand": "Dahua",
+    "image": "assets/products/krm-047.jpg"
+  },
+  {
+    "id": "KRM-048",
+    "name": "Dahua CCTV camera & recorder kit",
+    "category": "CCTV kits & recorders",
+    "brand": "Dahua",
+    "image": "assets/products/krm-048.jpg"
+  },
+  {
+    "id": "KRM-049",
+    "name": "Dahua video door phone set",
+    "category": "Video intercoms",
+    "brand": "Dahua",
+    "image": "assets/products/krm-049.jpg"
+  },
+  {
+    "id": "KRM-050",
+    "name": "EZVIZ connected video intercom kit",
+    "category": "Video intercoms",
+    "brand": "EZVIZ",
+    "image": "assets/products/krm-050.jpg"
+  },
+  {
+    "id": "KRM-051",
+    "name": "Digital keypad door lock",
+    "category": "Smart locks",
+    "brand": "",
+    "image": "assets/products/krm-051.jpg"
+  }
+]

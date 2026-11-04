@@ -1,0 +1,11 @@
+{
+  "name": "karama-it-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.cjs",
+    "build": "node scripts/build.cjs",
+    "test": "node --test tests/quotation.test.cjs"
+  },
+  "engines": { "node": ">=22" }
+}

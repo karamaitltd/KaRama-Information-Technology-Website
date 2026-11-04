@@ -1,0 +1,30 @@
+KaRama IT — design research and direction
+Updated 14 October 2026
+
+References reviewed for the initial design
+https://linear.app/ — focused positioning and concrete feature storytelling.
+https://vercel.com/ — technical capabilities and clear calls to action.
+https://www.thoughtworks.com/ — business-led consultancy narratives.
+
+Brand palette
+The supplied horizontal PNG contains bright blue pixels centred around RGB
+(0,149,253). Primary blue is #0095fd; lighter blue #65bcff supports readable text
+on dark surfaces. Secondary orange #fd6700 reflects the logo's warm nodes.
+Dark navy and pale blue supporting surfaces replace the original olive palette.
+Both original logos are preserved unchanged on light backing panels.
+
+Structure
+Five separate HTML documents: Home, Expertise, Possibilities, Our Approach,
+and Contact. Shared header/footer navigation, current-page indication, dedicated
+titles and descriptions. The home page introduces and links to the inner pages.
+Service links open the relevant expertise tab; service enquiry links preselect
+the same service on Contact. Business possibilities are illustrative, not case studies.
+
+Contact
+The contact form's Submit button opens the visitor's email app with the enquiry
+addressed to info@karama.tech. Contact details are those supplied by the owner. Service copy remains subject
+to the owner's confirmation before a public launch.
+
+Accessibility and performance
+Semantic landmarks, skip link, visible focus states, native dialog, keyboard service
+tabs, mobile menu, reduced motion and local system fonts/assets. No build required.
