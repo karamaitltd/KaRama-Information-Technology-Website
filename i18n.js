@@ -2,6 +2,14 @@
 // Saudi Arabic (ar-SA). Product references and brand names remain unchanged.
 (() => {
  const ar = {
+  'Prepare quotation email':'تجهيز رسالة طلب عرض السعر',
+  'Quotation request':'طلب عرض سعر',
+  'Quantity':'الكمية',
+  'Additional requirements':'متطلبات إضافية',
+  'Your email app will open with your quotation request addressed to':'سيُفتح تطبيق بريدك الإلكتروني برسالة طلب عرض السعر إلى',
+  '. Review and send the email to complete your enquiry.':'، يرجى مراجعة الرسالة وإرسالها لإكمال طلبك.',
+  'Your email app should now open with your quotation request. Review and send the email to complete your enquiry. Your cart has been kept.':'سيُفتح تطبيق بريدك الإلكتروني برسالة طلب عرض السعر. راجع الرسالة وأرسلها لإكمال طلبك. تم الاحتفاظ بسلتك.',
+  'This website does not use analytics, tracking cookies or external fonts. Your quotation cart is saved on this device; contact details are not saved in your browser. Contact and quotation forms open your own email app with an enquiry addressed to info@karama.tech. Review and send the email yourself to complete your enquiry. This GitHub Pages website does not send your form details to a database or email service. Contact info@karama.tech about your information.':'لا يستخدم هذا الموقع أدوات التحليل أو ملفات تعريف الارتباط للتتبّع أو خطوطاً خارجية. تُحفظ سلة طلب عرض السعر على هذا الجهاز، ولا تُحفظ بيانات التواصل في متصفحك. تفتح نماذج التواصل وطلب عرض السعر تطبيق بريدك الإلكتروني برسالة إلى info@karama.tech. راجع الرسالة وأرسلها بنفسك لإكمال طلبك. لا يرسل موقع GitHub Pages بيانات النماذج إلى قاعدة بيانات أو خدمة بريد إلكتروني. للاستفسار عن بياناتك، تواصل عبر info@karama.tech.',
   'Service requirement':'الخدمة المطلوبة',
   'Select your requirement':'اختر الخدمة المطلوبة',
   'Products with installation':'توريد المنتجات مع التركيب',

@@ -137,6 +137,13 @@
   if (!cart.size) {showResult('Please add a product to your cart first.',true); return;}
   if (location.protocol === 'file:') {showResult('Automatic sending is available on the hosted website. For now, contact info@karama.tech with your product references.',true); return;}
   const payload = {fullName:name.value.trim(),phone:normalizeDigits(phone.value.trim()),email:form.elements.email.value.trim(),serviceRequirement:form.elements.serviceRequirement.value,notes:form.elements.notes.value.trim(),website:form.elements.website.value,items:[...cart].map(([id,quantity])=>({id,quantity}))};
+  if (document.documentElement.dataset.quotationMode === 'email') {
+   const requirement = payload.serviceRequirement === 'products-with-installation' ? 'Products with installation' : 'Products only';
+   const body = [translate('Quotation request'),'',`${translate('Full name')}: ${payload.fullName}`,`${translate('Phone number')}: ${payload.phone}`,`${translate('Email')}: ${payload.email || '—'}`,`${translate('Service requirement')}: ${translate(requirement)}`,'',translate('Selected products'),...payload.items.map(item=>`${item.id} | ${translate(products.get(item.id).name)} | ${translate('Quantity')}: ${item.quantity}`),'',translate('Additional requirements'),payload.notes || '—'].join('\n');
+   location.href = `mailto:info@karama.tech?subject=${encodeURIComponent(translate('Quotation request')+' — '+payload.fullName)}&body=${encodeURIComponent(body)}`;
+   showResult(translate('Your email app should now open with your quotation request. Review and send the email to complete your enquiry. Your cart has been kept.'));
+   return;
+  }
   const fingerprint = JSON.stringify(payload);
   if (lastFingerprint !== fingerprint) {requestId = uuid(); lastFingerprint = fingerprint;}
   submitting = true; clearResult();
