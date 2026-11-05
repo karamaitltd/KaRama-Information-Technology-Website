@@ -2,9 +2,10 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname,'..');
+const publicRoot=process.argv.includes('--built')?path.join(root,'dist'):root;
 const quotation = require('../api/quotation');
 const contact = require('../api/contact');
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.json':'application/json'};
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.json':'application/json','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8'};
 const server = http.createServer(async (req,res)=>{
  const url = new URL(req.url,'http://localhost');
  if (url.pathname === '/api/quotation' || url.pathname === '/api/contact') {
@@ -17,9 +18,10 @@ const server = http.createServer(async (req,res)=>{
  }
  let relative;
  try {relative=decodeURIComponent(url.pathname).replace(/^\/+/, '') || 'index.html';} catch {res.writeHead(400);res.end();return;}
+ if(relative==='ar/')relative='ar/index.html';
  // Explicit public allowlist matches the production build.
- if (!/^(?:[a-z0-9-]+\.(?:html|css|js)|assets\/[a-zA-Z0-9_./-]+)$/.test(relative) || relative.split('/').includes('..')) {res.writeHead(404);res.end('Not found');return;}
- const file=path.join(root,relative);
+ if (!/^(?:(?:ar\/)?[a-z0-9-]+\.(?:html|css|js)|robots\.txt|sitemap\.xml|assets\/[a-zA-Z0-9_./-]+)$/.test(relative) || relative.split('/').includes('..')) {res.writeHead(404);res.end('Not found');return;}
+ const file=path.join(publicRoot,relative);
  fs.readFile(file,(error,data)=>{
   if(error){res.writeHead(404);res.end('Not found');return;}
   res.writeHead(200,{'Content-Type':types[path.extname(file)] || 'application/octet-stream'});res.end(data);

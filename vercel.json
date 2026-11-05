@@ -2,6 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/ar/index.html", "destination": "/ar/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "ar|ar-SA" }], "destination": "/ar/index.html" },
+    { "source": "/:page(expertise|possibilities|automations|approach|contact).html", "has": [{ "type": "query", "key": "lang", "value": "ar|ar-SA" }], "destination": "/ar/:page.html" }
+  ],
   "functions": {
     "api/*.js": {
       "maxDuration": 30,
@@ -9,6 +17,15 @@
     }
   },
   "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
     {
       "source": "/(.*)",
       "headers": [
