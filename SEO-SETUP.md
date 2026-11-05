@@ -17,11 +17,11 @@ Page metadata and structured data: `lib/seo.cjs`. Shared translations: `i18n-dat
 
 Run `node --test tests/*.test.cjs` to check form validation/delivery mocks, localized metadata, sitemap coverage, public asset links and the GitHub Pages fallback. Preview the built output with `node scripts/dev.cjs --built`.
 
-## Search Console follow-up
+## Search Console
 
-An owner should verify the Domain property **karama.tech** at https://search.google.com/search-console and submit `https://karama.tech/sitemap.xml`. Use the exact TXT verification value supplied by Search Console, adding it alongside existing TXT records. Do not replace SPF/DKIM records. If an existing verified property is available, reuse it.
+On November 5, 2026, the **karama.tech** Domain property was verified for the approved Google account **info@karamaitco.com** using an additional Google verification TXT record in Wix. Keep that record to retain ownership verification. Workspace MX/SPF/DKIM and Resend DKIM records were preserved.
 
-Inspect the English and Arabic home and Automations URLs, and request indexing. Search engine crawling and ranking are external processes; deployment and sitemap availability do not mean pages have already been indexed. No Search Console account verification or indexing submission is claimed by this implementation.
+Google processed `https://karama.tech/sitemap.xml` successfully and reported **12 discovered pages**. Reuse this verified property at https://search.google.com/search-console?resource_id=sc-domain%3Akarama.tech. Inspect English and Arabic URLs there to review later crawling, indexing and search performance. Search engine crawling and ranking are external processes; sitemap processing does not mean the pages have already been indexed or ranked.
 
 Official references:
 - https://developers.google.com/search/docs/specialty/international/localized-versions

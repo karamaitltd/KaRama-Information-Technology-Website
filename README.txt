@@ -13,4 +13,8 @@ The existing Pages workflow publishes a static version using email-app enquiries
 See GITHUB-PAGES.md for hosting details.
 
 CHECKS
-Run node --test tests/quotation.test.cjs. The tests do not send real emails.
+Run node --test tests/*.test.cjs. The tests do not send real emails.
+
+SEARCH / SEO
+The main search domain is https://karama.tech/ with twelve English and Saudi Arabic HTML pages.
+See SEO-SETUP.md for metadata, canonical URLs, sitemap and verified Search Console details.
